@@ -1,0 +1,91 @@
+def cadastrar_pessoa(pessoas):
+    nome = input("Digite o nome da pessoa: ")
+    gmail = input("Digite o email da pessoa: ")
+    cpf = input("Digite o CPF da pessoa: ")
+    numero = input("Digite o número da pessoa: ")
+    idade = input("Digite a idade da pessoa: ")
+    
+    pessoa = {"nome": nome, "gmail": gmail, "cpf": cpf, "numero": numero, "idade": idade}
+    
+    pessoas.append(pessoa)
+    print("Pessoa cadastrada com sucesso!\n")
+    
+
+def editar_pessoa(pessoas):
+    cpf = input("Digite o CPF da pessoa que deseja editar: ")
+    
+    for pessoa in pessoas:
+        if pessoa["cpf"] == cpf:
+            pessoa["nome"] = input("Digite o novo nome da pessoa: ")
+            pessoa["gmail"] = input("Digite o novo email da pessoa: ")
+            pessoa["numero"] = input("Digite o novo número da pessoa: ")
+            pessoa["idade"] = input("Digite a nova idade da pessoa: ")
+            print("Pessoa editada com sucesso!\n")
+            return
+    print("Pessoa não encontrada.\n")
+    
+
+def mostrar_pessoas(pessoas):
+    cpf = input("Digite o CPF da pessoa que deseja buscar (deixe em branco para mostrar todas as pessoas): ")
+    
+    if cpf:
+        for pessoa in pessoas:
+            if pessoa["cpf"] == cpf:
+                print("Nome: ", pessoa["nome"])
+                print("Email: ", pessoa["gmail"])
+                print("CPF: ", pessoa["cpf"])
+                print("Número: ", pessoa["numero"])
+                print("Idade: ", pessoa["idade"])
+                return
+        print("Pessoa não encontrada.\n")
+    else:
+        print("Lista de pessoas cadastradas:\n")
+        for pessoa in pessoas:
+            print("Nome: ", pessoa["nome"])
+            print("Email: ", pessoa["gmail"])
+            print("CPF: ", pessoa["cpf"])
+            print("Número: ", pessoa["numero"])
+            print("Idade: ", pessoa["idade"])
+            print("\n")
+    
+
+def excluir_pessoa(pessoas):
+    cpf = input("Digite o CPF da pessoa que deseja excluir: ")
+    
+    for i, pessoa in enumerate(pessoas):
+        if pessoa["cpf"] == cpf:
+            del pessoas[i]
+            print("Pessoa excluída com sucesso!\n")
+            return
+    print("Pessoa não encontrada.\n")
+    
+
+def main():
+    pessoas = []
+    
+    while True:
+        print("MENU:")
+        print("1 - Cadastrar pessoa")
+        print("2 - Editar pessoa")
+        print("3 - Mostrar pessoas")
+        print("4 - Excluir pessoa")
+        print("5 - Sair")
+        
+        opcao = input("Digite uma opção: ")
+        
+        if opcao == "1":
+            cadastrar_pessoa(pessoas)
+        elif opcao == "2":
+            editar_pessoa(pessoas)
+        elif opcao == "3":
+            mostrar_pessoas(pessoas)
+        elif opcao == "4":
+            excluir_pessoa(pessoas)
+        elif opcao == "5":
+            break
+        else:
+            print("Opção inválida!\n")
+            
+
+if __name__ == "__main__":
+    main()
