@@ -1,4 +1,7 @@
+"Crie um cadrastro de pessoas que permita cadrastar, editar, mostar/psquisa, excluir ."
+
 def cadastrar_pessoa(pessoas):
+    
     nome = input("Digite o nome da pessoa: ")
     gmail = input("Digite o email da pessoa: ")
     cpf = input("Digite o CPF da pessoa: ")
@@ -89,3 +92,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    
+
+
+
+
+
+
+
