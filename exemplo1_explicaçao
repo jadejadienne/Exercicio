@@ -1,0 +1,52 @@
+# Define a função "cadastrar_pessoa" que recebe uma lista "pessoas" como parâmetro
+
+def cadastrar_pessoa(pessoas):
+    
+    # Pede ao usuário para digitar o nome, email, CPF, número e idade da pessoa e armazena os valores em variáveis;
+    
+    nome = input("Digite o nome da pessoa: ")
+    gmail = input("Digite o email da pessoa: ")
+    cpf = input("Digite o CPF da pessoa: ")
+    numero = input("Digite o número da pessoa: ")
+    idade = input("Digite a idade da pessoa: ")
+    
+    # Cria um dicionário "pessoa" com as informações da pessoa
+    
+    pessoa = {"nome": nome, "gmail": gmail, "cpf": cpf, "numero": numero, "idade": idade}
+    
+    # Adiciona o dicionário "pessoa" à lista "pessoas"
+    
+    pessoas.append(pessoa)
+    
+    # Imprime uma mensagem informando que a pessoa foi cadastrada com sucesso
+    
+    print("Pessoa cadastrada com sucesso!\n")
+    
+    # A função cadastrar_pessoarecebe uma lista de pessoas e pede ao usuário para digitar as informações da pessoa. Em seguida, crie um dicionário com essas informações e adicione o dicionário à lista de pessoas. Por fim, exibe uma mensagem de sucesso.
+    
+    # Define a função "editar_pessoa" que recebe uma lista "pessoas" como parâmetro
+def editar_pessoa(pessoas):
+    
+    # Pede ao usuário para digitar o CPF da pessoa que deseja editar e armazena o valor em uma variável
+    cpf = input("Digite o CPF da pessoa que deseja editar: ")
+    
+    # Percorre a lista "pessoas" e verifica se há uma pessoa com o CPF informado pelo usuário
+    for pessoa in pessoas:
+        if pessoa["cpf"] == cpf:
+            # Se houver uma pessoa com o CPF informado, pede ao usuário para digitar as novas informações da pessoa e atualiza o dicionário correspondente
+            pessoa["nome"] = input("Digite o novo nome da pessoa: ")
+            pessoa["gmail"] = input("Digite o novo email da pessoa: ")
+            pessoa["numero"] = input("Digite o novo número da pessoa: ")
+            pessoa["idade"] = input("Digite a nova idade da pessoa: ")
+            
+            # Imprime uma mensagem informando que a pessoa foi editada com sucesso
+            print("Pessoa editada com sucesso!\n")
+            return
+            
+            # Se não houver uma pessoa com o CPF informado, imprime uma mensagem informando que a pessoa não foi encontrada
+    print("Pessoa não encontrada.\n")
+    
+    # A função editar_pessoarecebe uma lista de pessoas e pede ao usuário para digitar o CPF da pessoa que deseja editar. Em seguida, percorra a lista de pessoas e verifique se há uma pessoa com o CPF informado. Se houver, peça ao usuário para digitar as novas informações da pessoa e atualizar o dicionário correspondente. Por fim, exibe uma mensagem de sucesso. Se não houver uma pessoa com o CPF informado, exibe uma mensagem informando que a pessoa não foi encontrada.
+
+Pitão
+
