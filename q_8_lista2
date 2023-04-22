@@ -1,0 +1,18 @@
+def main():
+
+    dicionario = {}
+    
+    chave = str(input("Digite uma chave: "))
+    valor = int(input("Digite um valor: "))
+    
+    dicionario[chave] = valor
+    
+    if 'idade' in dicionario:
+        idade = dicionario['idade']
+        print("O valor da chave 'idade' é:", idade)
+    else:
+        print("A chave 'idade' não foi encontrada no dicionário.")
+        
+
+if __name__ == "__main__":
+    main()
