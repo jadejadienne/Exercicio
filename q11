@@ -1,25 +1,18 @@
 def main():   
     lista_vazia = []
     
-    numeros_lista = 10
-    
-    for i in range(numeros_lista):
+    for recebe in range(0, 10):
         numero = int(input("Digite um número: ")) 
         lista_vazia.append(numero)
         
-    indices_pares = []
+    print("numeros pares: ")
         
-    for i in range(0, len(lista_vazia), 2):
-        indices_pares.append(lista_vazia[i])
+    for i in range(len(lista_vazia)):
+     if i % 2 == 0:
         
-    print("Lista de números pares: ", " ".join(map(str, indices_pares)))
+         print("Lista de números pares: ", " ".join(map(str,lista_vazia [i])))
     
 if __name__ == "__main__":
-    main()
-Essa solução cria uma lista vazia, solicita que o usuário digite 10 números e, em seguida, adiciona esses números à lista. Em seguida, itera sobre a lista original com um passo de 2, adicionando os elementos de índice par à nova lista indices_pares. Finalmente, a lista de números pares é impressa. Note que a função map() é usada para converter cada número da lista em uma string antes de imprimir.
-
-
-
-
+  main()
 
 
